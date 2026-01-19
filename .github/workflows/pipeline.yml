@@ -25,7 +25,7 @@ jobs:
       run: pip install boto3
 
     - name: Install AWS CLI
-      run: sudo apt-get update && sudo apt-get install -y awscli
+      run: pip install awscli
 
     - name: Run AI Resume Processor
       run: python scripts/ai_resume_processor.py
@@ -50,3 +50,4 @@ jobs:
       env:
         S3_URL: https://resume-site-${{ secrets.AWS_ACCOUNT_ID }}.s3.amazonaws.com/${{ env.ENV }}/index.html
       run: python scripts/dynamodb_writer.py
+
