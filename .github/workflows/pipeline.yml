@@ -28,7 +28,7 @@ jobs:
       run: pip install awscli
 
     - name: Run AI Resume Processor
-      run: python scripts/ai_resume_processor.py
+      run: python scripts/ai-resume-processor.py
 
     - name: Debug Files
       run: ls -la
@@ -50,4 +50,5 @@ jobs:
       env:
         S3_URL: https://resume-site-${{ secrets.AWS_ACCOUNT_ID }}.s3.amazonaws.com/${{ env.ENV }}/index.html
       run: python scripts/dynamodb_writer.py
+
 
